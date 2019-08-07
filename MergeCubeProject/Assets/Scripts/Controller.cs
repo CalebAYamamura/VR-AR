@@ -5,7 +5,7 @@ using UnityEngine;
 public class Controller : MonoBehaviour
 {
     // List of Variables
-    public float speed = 1f; // Speed of PacMan, can adjust
+    public float speed = 0.5f; // Speed of PacMan, can adjust
     public GameObject spawn_1; // Escape Routes for off screen "hallways"
     public int dotsLeft; // To count the Dots left
     public GameObject startPoint; // Returns the ghost to their spawn
