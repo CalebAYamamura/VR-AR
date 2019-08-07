@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ec070afe0e8f4181a1b177d5ceb9ff0, type: 3}
   m_Name: MergeConfigurationFile
   m_EditorClassIdentifier: 
-  licenseKey: 2019-Summer-VR-AR-Course-DigitalMediaAcademy
+  licenseKey: 
   scaleFactor: 0
   customScaleFactor: 1
   chosenScaleFactor: 1

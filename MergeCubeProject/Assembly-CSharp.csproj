@@ -53,6 +53,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Ghost.cs" />
      <Compile Include="Assets\MergeCubeSDK\_Examples\IntroSequencer\Scripts\InputHandle.cs" />
      <Compile Include="Assets\MergeCubeSDK\_Examples\IntroSequencer\Scripts\IntroSequenceExampleManager.cs" />
      <Compile Include="Assets\MergeCubeSDK\MergeCubeSDK_UI\GFX\Sprites\LoadingAnimation\MergeEveRotate.cs" />
@@ -100,6 +101,8 @@
      <Compile Include="Assets\MergeCubeSDK\Tools\Recording\Scripts\RecordingManager.cs" />
      <Compile Include="Assets\MergeCubeSDK\Tools\ScanToBeginHelper\Scripts\TrackOnce.cs" />
      <Compile Include="Assets\Scripts\Controller.cs" />
+     <Compile Include="Assets\Scripts\GhostAI.cs" />
+     <Compile Include="Assets\Scripts\Points.cs" />
      <None Include="Assets\Vuforia\Shaders\ColoredLines.shader" />
      <None Include="Assets\Vuforia\Shaders\CameraDiffuse.shader" />
      <None Include="Assets\Vuforia\Shaders\VertexLitWithZ.shader" />
@@ -335,6 +338,9 @@
  <Reference Include="UnityEngine.SpatialTracking">
  <HintPath>/Applications/Unity/Hub/Editor/2018.3.12f1/Unity.app/Contents/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
  </Reference>
+ <Reference Include="MergeCubeCore">
+ <HintPath>/Users/student/Documents/VR-AR/MergeCubeProject/Assets/MergeCubeSDK/Scripts/Core/MergeCubeCore.dll</HintPath>
+ </Reference>
  <Reference Include="Unity.Analytics.Tracker">
  <HintPath>/Users/student/Documents/VR-AR/MergeCubeProject/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
  </Reference>
@@ -343,9 +349,6 @@
  </Reference>
  <Reference Include="Unity.Analytics.StandardEvents">
  <HintPath>/Users/student/Documents/VR-AR/MergeCubeProject/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
- </Reference>
- <Reference Include="MergeCubeCore">
- <HintPath>/Users/student/Documents/VR-AR/MergeCubeProject/Assets/MergeCubeSDK/Scripts/Core/MergeCubeCore.dll</HintPath>
  </Reference>
  <Reference Include="netstandard">
  <HintPath>/Applications/Unity/Hub/Editor/2018.3.12f1/Unity.app/Contents/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

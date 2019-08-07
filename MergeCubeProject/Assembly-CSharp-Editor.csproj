@@ -326,6 +326,9 @@
  <Reference Include="UnityEditor.OSXStandalone.Extensions">
  <HintPath>/Applications/Unity/Hub/Editor/2018.3.12f1/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll</HintPath>
  </Reference>
+ <Reference Include="MergeCubeCore">
+ <HintPath>/Users/student/Documents/VR-AR/MergeCubeProject/Assets/MergeCubeSDK/Scripts/Core/MergeCubeCore.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>/Users/student/Documents/VR-AR/MergeCubeProject/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
  </Reference>
@@ -340,9 +343,6 @@
  </Reference>
  <Reference Include="UnityEditor.Purchasing">
  <HintPath>/Users/student/Documents/VR-AR/MergeCubeProject/Library/PackageCache/com.unity.purchasing@2.0.3/Editor/UnityEditor.Purchasing.dll</HintPath>
- </Reference>
- <Reference Include="MergeCubeCore">
- <HintPath>/Users/student/Documents/VR-AR/MergeCubeProject/Assets/MergeCubeSDK/Scripts/Core/MergeCubeCore.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
  <HintPath>/Applications/Unity/Hub/Editor/2018.3.12f1/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
