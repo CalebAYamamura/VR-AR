@@ -7,37 +7,46 @@ public class Controller : MonoBehaviour
     // List of Variables
     public float speed = 0.5f; // Speed of PacMan, can adjust
     public GameObject spawn_1; // Escape Routes for off screen "hallways"
+    public GameObject spawn_2; // ^Same
     public int dotsLeft; // To count the Dots left
     public GameObject startPoint; // Returns the ghost to their spawn
 
+    // List of Game States
+    public enum screen {menu, countdown, game, win, lose,};
+
+    // Game state variable 
+
+    screen currentScreen;
+
     // Start is called before the first frame update
-    void Start()
+    void Start() // Dot Count til win Condition
     {
-        
+        dotsLeft = 40;
+        // Top of page 7 (START HERE FRIDAY) 
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("dotsLeft"); // This will print the amount of dots left in the game
+        Debug.Log(dotsLeft); // This will print the amount of dots left in the game
         ShowDots(); // Run the function "ShowDots"
 
         if(Input.GetKey(KeyCode.W)) // Moving forward
         {
-            transform.position += transform.forward * speed * Time.deltaTime; // Movement
+            MoveUp(); // Movement
         }
         else if(Input.GetKey(KeyCode.S)) // Moving back
         {
-            transform.position += transform.forward * -speed * Time.deltaTime; // Movement
+            MoveDown(); // Movement
         }
         else if(Input.GetKey(KeyCode.D)) // Moving to the right
         {
-            transform.position += transform.right * speed * Time.deltaTime; // Movement
+            MoveLeft(); // Movement
         }
         else if(Input.GetKey(KeyCode.A)) // Moving to the left
         {
-            transform.position += transform.right * -speed * Time.deltaTime; // Movement
-        }
+            MoveRight(); // Movement
+        } // Better Movement
         
     }
     void OnTriggerEnter(Collider gate) // Gate_1 and spawn_1
@@ -45,6 +54,11 @@ public class Controller : MonoBehaviour
         if (gate.gameObject.tag == "Gate_1")
         {
             transform.position = spawn_1.transform.position;
+        }
+                                      // Gate_2 and spawn_2
+        else if (gate.gameObject.tag == "Gate_2")
+        {
+            transform.position = spawn_2.transform.position;
         }
     }
     void OnCollisionEnter(Collision collision) // Remove Dots on touch function
@@ -58,11 +72,29 @@ public class Controller : MonoBehaviour
             transform.position = startPoint.transform.position;
         }
     }
-    void ShowDots()
+    void ShowDots() // Win Condition
     {    
         if(dotsLeft == 0)
         {
             Debug.Log("You Win"); // Win Condition
         }
+    }
+    public void MoveUp()
+    {
+        transform.position += transform.forward * speed * Time.deltaTime;
+        Debug.Log("Move Up"); 
+    }
+    public void MoveDown()
+    {
+        transform.position += transform.forward * -speed * Time.deltaTime;
     }  
+    public void MoveLeft()
+    {
+        transform.position += transform.right * -speed * Time.deltaTime;
+    }
+    public void MoveRight()
+    {
+        transform.position += transform.right * speed * Time.deltaTime;
+    }
+
 }

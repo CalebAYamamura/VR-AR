@@ -18,7 +18,7 @@ public class Points : MonoBehaviour
     {
         
     }
-    void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter(Collision collision) // Points Gathered
     {
         if(collision.gameObject.tag == "Player")
         {

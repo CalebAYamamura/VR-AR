@@ -15,15 +15,15 @@ public class Ghost : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Physics.IgnoreLayerCollision(9, 10);
     }
 
     // Update is called once per frame
-    void Update()
+    void Update() // Ghost Movement
     {
         if(turnZero == true)
         {
-            transform.position += transform.forward * ghostSpeed * Time.deltaTime;
+            transform.position += transform.forward * -ghostSpeed * Time.deltaTime;
         }
         else if(turnOne == true)
         {
@@ -34,7 +34,7 @@ public class Ghost : MonoBehaviour
             transform.position += transform.forward * -ghostSpeed * Time.deltaTime;
         }
     }
-    void OnTriggerEnter(Collider turns)
+    void OnTriggerEnter(Collider turns) // Bumping into things no more, now he turns!
     {
         if(turns.gameObject.name == "Base 1")
         {
@@ -46,6 +46,18 @@ public class Ghost : MonoBehaviour
         {
             turnOne = false;
             turnTwo = true;
+        }
+        else if(turns.gameObject.name == "Base 3")
+        {
+            turnZero = true;
+            turnTwo = false;
+        }
+    }
+    void OnCollisionEnter(Collision collision) // Lose Condition
+    {
+        if(collision.gameObject.tag == "Player")
+        {
+            transform.position = ghostStart.transform.position;
         }
     }
 }
