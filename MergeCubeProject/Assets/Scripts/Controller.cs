@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Controller : MonoBehaviour
 {
@@ -12,17 +13,27 @@ public class Controller : MonoBehaviour
     public GameObject startPoint; // Returns the ghost to their spawn
 
     // List of Game States
-    public enum screen {menu, countdown, game, win, lose,};
+    public enum screen {menu, countdown, game, win, lose,}; // Different screens
 
     // Game state variable 
+    screen currentScreen; // What screen is on the screen
 
-    screen currentScreen;
+    // Menu UI elements
+    public Text welcome;
+    public Text instruction;
+    public GameObject startButton;
+
+    // Player Controller UI Elements
+    public GameObject upButton;
+    public GameObject downButton;
+    public GameObject rightButton;
+    public GameObject leftButton;
 
     // Start is called before the first frame update
     void Start() // Dot Count til win Condition
     {
         dotsLeft = 40;
-        // Top of page 7 (START HERE FRIDAY) 
+        currentScreen = screen.menu; 
     }
 
     // Update is called once per frame
@@ -48,6 +59,7 @@ public class Controller : MonoBehaviour
             MoveRight(); // Movement
         } // Better Movement
         
+     
     }
     void OnTriggerEnter(Collider gate) // Gate_1 and spawn_1
     {
@@ -90,11 +102,38 @@ public class Controller : MonoBehaviour
     }  
     public void MoveLeft()
     {
-        transform.position += transform.right * -speed * Time.deltaTime;
+        transform.position += transform.right * speed * Time.deltaTime;
     }
     public void MoveRight()
     {
-        transform.position += transform.right * speed * Time.deltaTime;
+        transform.position += transform.right * -speed * Time.deltaTime;
     }
+   /*  public void GameState() // Continue later???    
+    {
+        welcome.text = "Welcome to Pacman";
 
+        if (currentScreen == screen.menu)
+        {
+            upButton.SetActive(false);
+            downButton.SetActive(false);
+            rightButton.SetActive(false);
+            leftButton.SetActive(false);
+        }
+        else if (currentScreen == screen.countdown)
+        {
+
+        }
+        else if (currentScreen == screen.game)
+        {
+
+        }
+        else if (currentScreen == screen.win)
+        {
+
+        }
+        else if (currentScreen == screen.lose)
+        {
+
+        }
+    }*/
 }
